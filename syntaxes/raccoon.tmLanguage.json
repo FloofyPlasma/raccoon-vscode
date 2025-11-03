@@ -1,0 +1,159 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Raccoon",
+  "scopeName": "source.raccoon",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#storage-modifiers" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#functions" },
+    { "include": "#operators" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.raccoon",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.raccoon",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.raccoon",
+          "match": "\\b(if|else|while|for|return)\\b"
+        },
+        {
+          "name": "keyword.other.raccoon",
+          "match": "\\b(import|export|struct|extern)\\b"
+        }
+      ]
+    },
+    "storage-modifiers": {
+      "patterns": [
+        {
+          "name": "storage.type.raccoon",
+          "match": "\\b(let|const|fun)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.primitive.raccoon",
+          "match": "\\b(i8|i16|i32|i64|u8|u16|u32|u64|f32|f64|bool|usize|void)\\b"
+        },
+        {
+          "name": "storage.type.pointer.raccoon",
+          "match": "\\*(?=\\s*[a-zA-Z_]|\\s*\\)|\\s*,|\\s*;)"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.raccoon",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.raccoon",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.raccoon",
+              "match": "\\\\(n|r|t|\\\\|\"|')"
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.raccoon",
+          "match": "\\b\\d+\\.\\d+([eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.numeric.integer.raccoon",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.raccoon",
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+        },
+        {
+          "name": "support.function.builtin.raccoon",
+          "match": "\\b(malloc|free)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.logical.raccoon",
+          "match": "(&&|\\|\\||!)"
+        },
+        {
+          "name": "keyword.operator.comparison.raccoon",
+          "match": "(==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.arithmetic.raccoon",
+          "match": "(\\+|-|\\*|/|%)"
+        },
+        {
+          "name": "keyword.operator.assignment.raccoon",
+          "match": "="
+        },
+        {
+          "name": "keyword.operator.pointer.raccoon",
+          "match": "(&|\\*(?!\\s*[a-zA-Z_]))"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.accessor.raccoon",
+          "match": "\\."
+        },
+        {
+          "name": "punctuation.separator.raccoon",
+          "match": "[,;:]"
+        },
+        {
+          "name": "punctuation.section.braces.raccoon",
+          "match": "[{}]"
+        },
+        {
+          "name": "punctuation.section.brackets.raccoon",
+          "match": "[\\[\\]]"
+        },
+        {
+          "name": "punctuation.section.parens.raccoon",
+          "match": "[()]"
+        }
+      ]
+    }
+  }
+}
