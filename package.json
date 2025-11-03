@@ -4,8 +4,13 @@
   "description": "Syntax highlighting and language support for the Raccoon programming language - a statically-typed systems language with manual memory management",
   "version": "1.0.0",
   "license": "MIT",
+  "publisher": "FloofyPlasma",
   "engines": {
     "vscode": "^1.105.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/floofyplasma/raccoon-vscode.git" 
   },
   "categories": [
     "Programming Languages"
